@@ -1,5 +1,6 @@
 import requests
 
+url = "https://your-vercel-app-url.vercel.app/products"
 
 data = [
     {

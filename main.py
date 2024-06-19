@@ -11,9 +11,9 @@ db = SQLAlchemy(app)
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nama_produk = db.Column(db.String(100), nullable=False)
-    deskripsi = db.Column(db.String(200), nullable=False)
+    deskripsi = db.Column(db.String(500), nullable=False)
     harga = db.Column(db.Float, nullable=False)
-    gambar = db.Column(db.String(100), nullable=False)
+    gambar = db.Column(db.String(200), nullable=False)
 
     def to_dict(self):
         return {
