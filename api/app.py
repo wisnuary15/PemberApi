@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 from flask_restful import Api, Resource
 import uuid
-from data import products
+from .data import products  # Perhatikan perubahan di sini
 
 app = Flask(__name__)
 api = Api(app)
