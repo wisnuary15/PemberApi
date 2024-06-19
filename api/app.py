@@ -1,8 +1,7 @@
-# app.py
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_restful import Api, Resource
 import uuid
-from data import products  # Import data dari data.py
+from data import products
 
 app = Flask(__name__)
 api = Api(app)
@@ -62,6 +61,10 @@ class ProductDetail(Resource):
             "error": False,
             "message": "Product deleted successfully"
         }
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 api.add_resource(ProductList, '/products')
 api.add_resource(ProductDetail, '/products/<string:product_id>')
